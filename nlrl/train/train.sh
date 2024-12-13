@@ -1,0 +1,27 @@
+export CUDA_VISIBLE_DEVICES=3,4,5,6
+torchrun --nproc_per_node=4 --master_port=20002 pipeline/train/train_sft.py \
+    --model_name_or_path="meta-llama/Meta-Llama-3-8B-Instruct" \
+    --train_dataset_path="pipeline/data/mc_value_target_for_train.jsonl" \
+    --max_seq_length=1024 \
+    --eval_dataset_path=None \
+    --report_to="tensorboard" \
+    --learning_rate=2e-5 \
+    --torch_dtype="bfloat16" \
+    --warmup_ratio 0.03 \
+    --lr_scheduler_type "cosine" \
+    --per_device_train_batch_size=8 \
+    --max_seq_length 1024 \
+    --gradient_accumulation_steps=2 \
+    --attn_implementation=flash_attention_2 \
+    --output_dir="pipeline/models/value_model_iter0/" \
+    --logging_steps=1 \
+    --num_train_epoch=2 \
+    --save_strategy "no" \
+    --max_steps=-1 \
+    --gradient_checkpointing \
+    --bf16 \
+    --evaluation_strategy "no" \
+    --eval_steps 0.1 \
+    --per_device_eval_batch_size 8 \
+    --fsdp "full_shard auto_wrap" \
+    --fsdp_transformer_layer_cls_to_wrap LlamaDecoderLayer
