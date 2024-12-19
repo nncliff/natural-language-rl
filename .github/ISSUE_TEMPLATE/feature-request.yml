@@ -1,0 +1,109 @@
+name: ✨ Feature Request
+description: Suggest an idea for Natural Language RL
+title: "[FEATURE REQUEST] "
+labels: [enhancement]
+assignees: [waterhorse1]
+body:
+  - type: checkboxes
+    id: steps
+    attributes:
+      label: Required prerequisites
+      description: Please complete these steps before submitting your feature request
+      options:
+        - label: I have searched the [Issue Tracker](https://github.com/waterhorse1/Natural-language-RL/issues) to ensure this hasn't already been suggested.
+          required: true
+        - label: I have read the project README and understand the current functionality.
+          required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Which component would this feature enhance?
+      options:
+        - Maze Environment
+        - Breakthrough Game
+        - TicTacToe Implementation
+        - Language Policy Network
+        - Language Value Network
+        - Training Pipeline
+        - Documentation
+        - Testing Framework
+        - Performance Optimization
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation and Context
+      description: What problem does this feature solve? Please provide clear context.
+      value: |
+        ### Current Limitation
+        <!-- Describe what's currently missing or could be improved -->
+
+        ### Use Case
+        <!-- Describe specific use cases this feature would enable -->
+
+        ### Related Research
+        <!-- Reference relevant papers, implementations, or approaches in NLRL -->
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution you'd like to see implemented
+      value: |
+        ### Feature Description
+        <!-- Provide a clear description of the proposed feature -->
+
+        ### Technical Details
+        <!-- Share your thoughts on implementation approach -->
+
+        ### Integration Plan
+        <!-- How would this feature integrate with existing components? -->
+
+        ### Expected Benefits
+        <!-- What specific improvements would this bring to the project? -->
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Approaches
+      description: What alternative solutions have you considered?
+      value: |
+        ### Alternative 1
+        <!-- Describe first alternative approach -->
+
+        ### Alternative 2
+        <!-- Describe second alternative approach -->
+
+        ### Trade-offs
+        <!-- Compare pros and cons of each approach -->
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: |
+        Add any other context about the feature request here. This might include:
+        - Proposed model architecture changes
+        - Training pipeline modifications
+        - Performance impact estimates
+        - Memory requirements
+        - Dataset considerations
+        - Examples from similar implementations
+        - Mockups or diagrams
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Let us know if you'd like to help implement this feature
+      options:
+        - label: I would be willing to contribute this feature through a Pull Request
+          required: false
+        - label: I can help with testing and evaluation
+          required: false

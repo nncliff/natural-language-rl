@@ -1,0 +1,138 @@
+name: 🐛 Bug Report
+description: File an issue about a bug in Natural Language RL
+title: "[BUG] "
+labels: [bug]
+assignees: [waterhorse1]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please make the issue as actionable as possible by providing all relevant information about the bug you've encountered.
+
+  - type: checkboxes
+    id: steps
+    attributes:
+      label: Required prerequisites
+      description: Please complete these steps before submitting your issue
+      options:
+        - label: I have read the README and documentation in the repository.
+          required: true
+        - label: I have searched the [Issue Tracker](https://github.com/waterhorse1/Natural-language-RL/issues) to ensure this hasn't already been reported.
+          required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Which component has the issue?
+      options:
+        - Maze
+        - Breakthrough
+        - TicTacToe
+        - Installation
+        - Language Policy Network
+        - Language Value Network
+        - Training Pipeline
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: models
+    attributes:
+      label: Which model are you using? (if applicable)
+      options:
+        - Llama-3.1-8B-Instruct-NLRL-Breakthrough-Value
+        - Llama-3.1-8B-Instruct-NLRL-TicTacToe-Policy
+        - Llama-3.1-8B-Instruct-NLRL-TicTacToe-Value
+        - Custom Model
+        - Not Applicable
+    validations:
+      required: false
+
+  - type: textarea
+    id: system-info
+    attributes:
+      label: System information
+      description: |
+        Please provide your environment information:
+
+        ```python
+        import sys, torch, transformers
+        print(f"Python: {sys.version}")
+        print(f"Platform: {sys.platform}")
+        print(f"PyTorch: {torch.__version__}")
+        print(f"Transformers: {transformers.__version__}")
+        ```
+
+        Installation details:
+        - Installation method (git clone, etc.)
+        - Conda environment name
+        - Installation steps completed:
+          - [ ] Base requirements
+          - [ ] Modified gym-tictactoe
+          - [ ] Forked OpenSpiel
+          - [ ] Modified HuggingFace Trainer
+          - [ ] Set PYTHONPATH
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem description
+      description: Provide a clear and detailed description of what went wrong.
+    validations:
+      required: true
+
+  - type: textarea
+    id: code
+    attributes:
+      label: Reproducible example code
+      description: |
+        Please provide minimal code that reproduces the issue. Include:
+        - Python code snippets
+        - Command line commands used
+        - Any relevant configuration files
+        - Dataset details (if using custom data)
+
+        The example should have minimal external dependencies and isolate the problem.
+      value: |
+        ```python
+        # Python code here
+        ```
+
+        ```bash
+        # Commands used
+        ```
+
+        Steps to reproduce:
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: traceback
+    attributes:
+      label: Error message or traceback
+      description: If you're reporting an error, paste the complete error message here, including the full traceback.
+      render: pytb
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen? Please be specific.
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: |
+        Add any other helpful context about the problem here. For example:
+        - Screenshots
+        - Model checkpoint details
+        - Custom configuration settings
+        - Performance metrics
+        - Suggestions for fixing the issue
