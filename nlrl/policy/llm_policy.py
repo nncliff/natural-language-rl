@@ -26,7 +26,7 @@ class Agent:
         self.tp_size = model_tp_size
         self.sample_config = sample_config
         self.is_gpt4 = "gpt-4" in model_path.lower()
-        self.is_ppo = "ppo" in model_path.lower()
+        self.is_ppo = "-ppo" in model_path.lower()
         print(f"model_path: {model_path}, is_gpt4: {self.is_gpt4}, is_ppo: {self.is_ppo}")
 
         if self.is_gpt4:
