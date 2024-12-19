@@ -1,0 +1,124 @@
+name: 🤔 Questions / Help / Support
+description: Need help with Natural Language RL? Ask your questions here.
+title: "[Question] "
+labels: [question]
+assignees: [waterhorse1]
+body:
+  - type: checkboxes
+    id: steps
+    attributes:
+      label: Required prerequisites
+      description: Please complete these steps before submitting your question
+      options:
+        - label: I have thoroughly read the repository README and documentation.
+          required: true
+        - label: I have searched existing [Issues](https://github.com/waterhorse1/Natural-language-RL/issues) for similar questions.
+          required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Question Category
+      description: What area is your question about?
+      options:
+        - Installation & Setup
+        - Environment Setup
+        - Maze Environment
+        - Breakthrough Game
+        - TicTacToe Implementation
+        - Language Policy Network
+        - Language Value Network
+        - Training Pipeline
+        - Dataset Usage
+        - Model Checkpoints
+        - Paper Implementation
+        - Performance Issues
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: models
+    attributes:
+      label: Which model are you using? (if applicable)
+      options:
+        - Llama-3.1-8B-Instruct-NLRL-Breakthrough-Value
+        - Llama-3.1-8B-Instruct-NLRL-TicTacToe-Policy
+        - Llama-3.1-8B-Instruct-NLRL-TicTacToe-Value
+        - Custom Model
+        - Not Applicable
+    validations:
+      required: false
+
+  - type: textarea
+    id: system-info
+    attributes:
+      label: Environment (if relevant)
+      description: |
+        If your question relates to installation or running the code, please provide:
+        ```python
+        import sys, torch, transformers
+        print(f"Python: {sys.version}")
+        print(f"Platform: {sys.platform}")
+        print(f"PyTorch: {torch.__version__}")
+        print(f"Transformers: {transformers.__version__}")
+        ```
+
+        Installation details:
+        - Installation method (git clone, etc.)
+        - Conda environment name
+        - Installation steps completed:
+          - [ ] Base requirements
+          - [ ] Modified gym-tictactoe
+          - [ ] Forked OpenSpiel
+          - [ ] Modified HuggingFace Trainer
+          - [ ] Set PYTHONPATH
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: Question Details
+      description: |
+        Please provide:
+        - Clear, specific questions
+        - Relevant code snippets
+        - What you've already tried
+        - Error messages (if any)
+        - Links to relevant sections of the paper
+      value: |
+        ### Question
+        <!-- Your specific question here -->
+
+        ### Context
+        <!-- Background information -->
+
+        ### Relevant Paper Section
+        <!-- If related to paper implementation, reference the section -->
+
+        ### Code (if applicable)
+        ```python
+        # Your code here
+        ```
+
+        ### Error Message (if any)
+        ```
+        # Error output here
+        ```
+
+        ### What I've Tried
+        <!-- List what you've attempted so far -->
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: |
+        Add any other helpful context, such as:
+        - Screenshots
+        - Model configuration
+        - Training parameters
+        - Dataset details
+        - Performance metrics
+        - Hardware specifications

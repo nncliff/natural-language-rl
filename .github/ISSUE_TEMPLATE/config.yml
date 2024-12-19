@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 Read the README
+    url: https://github.com/waterhorse1/Natural-language-RL#readme
+    about: Please check our documentation first for installation and usage guidance.
+  - name: 📊 Breakthrough Dataset
+    url: https://huggingface.co/datasets/Waterhorse/Breakthrough_dataset
+    about: Access the open-source breakthrough's language TD training and test datasets.
+  - name: 🤖 TicTacToe Policy Model
+    url: https://huggingface.co/Benjamin-eecs/Llama-3.1-8B-Instruct-NLRL-TicTacToe-Policy
+    about: Download our trained TicTacToe policy network.
+  - name: 🤖 TicTacToe Value Model
+    url: https://huggingface.co/Benjamin-eecs/Llama-3.1-8B-Instruct-NLRL-TicTacToe-Value
+    about: Download our trained TicTacToe value network.
+  - name: 🤖 Breakthrough Value Model
+    url: https://huggingface.co/Waterhorse/Llama-3.1-8B-Instruct-NLRL-Breakthrough-Value
+    about: Download our trained Breakthrough value network.
