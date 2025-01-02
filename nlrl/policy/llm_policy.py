@@ -8,7 +8,8 @@ from nlrl.llm_call import vllm_model
 from nlrl.config import LLMSamplingParams
 import numpy as np
 from nlrl.offline_infer import offline_ray_vllm_infer
-from openai import OpenAI
+from openai import AzureOpenAI
+#from openai import OpenAI
 from transformers import AutoTokenizer
 import torch
 
@@ -30,9 +31,15 @@ class Agent:
         print(f"model_path: {model_path}, is_gpt4: {self.is_gpt4}, is_ppo: {self.is_ppo}")
 
         if self.is_gpt4:
-            self.client = OpenAI(
-                api_key=openai_api_key,
-            )  # Uses OPENAI_API_KEY from environment
+            api_key = '3618f0a0e24c437485a987152044bd28'
+            self.client = AzureOpenAI(
+                    api_key=api_key,
+                    api_version='2024-02-15-preview',
+                    azure_endpoint='https://poccopilot.openai.azure.com/')
+            #self.model = model
+            #self.client = OpenAI(
+            #    api_key=openai_api_key,
+            #)  # Uses OPENAI_API_KEY from environment
         elif self.is_ppo:
             sample_config.prompt_logprobs = True
             self.model = vllm_model(

@@ -1,6 +1,6 @@
 import signal
 from typing import Optional
-from openai import OpenAI
+from openai import AzureOpenAI
 import openai
 import requests
 import os
@@ -29,11 +29,14 @@ def llama3_instruct_format(tokenizer, messages):
 class openai_model:
     def __init__(
         self,
-        model: str = "gpt-4o-mini",
+        model: str = "poccopilot",
         sample_config: LLMSamplingParams = None,
     ):
-        api_key = os.getenv("OPENAI_API_KEY")
-        self.client = OpenAI(api_key=api_key)
+        api_key = '3618f0a0e24c437485a987152044bd28'
+        self.client = AzureOpenAI(
+                api_key=api_key,
+                api_version='2024-02-15-preview',
+                azure_endpoint='https://poccopilot.openai.azure.com/')
         self.model = model
         self.sample_config = sample_config
     
